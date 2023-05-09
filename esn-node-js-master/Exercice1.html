@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div>
+      <h1>Calcul volume</h1>
+      <label>Longueur</label>
+      <input id="long" type="number" />
+      <label>Largeur</label>
+      <input id="larg" type="number" />
+      <label>Hauteur</label>
+      <input id="haut" type="number" />
+    </div>
+    <div>
+      <button type="button" onClick="calculerVolume()">Calculer</button>
+    </div>
+    <div>
+      <p>Résultat :</p>
+      <p id="result"></p>
+    </div>
+  </body>
+</html>
+<script>
+  function calculerVolume() {
+    const longueur = document.getElementById("long").value;
+    const largeur = document.getElementById("larg").value;
+    const hauteur = document.getElementById("haut").value;
+
+    if (longueur === "" || largeur === "" || hauteur === "") {
+      document.getElementById("result").innerText =
+        "Erreur : Veuillez remplir tous les champs.";
+    } else if (longueur <= 0 || largeur <= 0 || hauteur <= 0) {
+      document.getElementById("result").innerText =
+        "Erreur : Les valeurs doivent être positives et non nulles.";
+    } else {
+      const volume = longueur * largeur * hauteur;
+      document.getElementById("result").innerText =
+        "Le volume est de : " + volume + 'm³';
+    }
+  }
+</script>
