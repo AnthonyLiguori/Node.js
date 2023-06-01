@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const artistSchema = mongoose.Schema({
-  name: { type: String, required: true },
-});
+    name: {type: String, required: true}
+})
 
-module.exports = mongoose.model("Artist", artistSchema);
+module.exports = mongoose.model('Artist', artistSchema)
